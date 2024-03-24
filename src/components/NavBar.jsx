@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
-    const [theme, setTheme] = useState("synthwave");
+    const [theme, setTheme] = useState("light");
 
     useEffect(() => {
         localStorage.setItem("theme", theme);
@@ -14,9 +14,9 @@ const NavBar = () => {
     const handleTheme = (e) => {
 
         if (e.target.checked) {
-            setTheme("light");
+            setTheme("synthwave");
         } else {
-            setTheme("synthwave")
+            setTheme("light")
         }
     }
 
