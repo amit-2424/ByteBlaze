@@ -23,15 +23,15 @@ const NavBar = () => {
 
     return (
 
-        <div className="navbar bg-base-100 shadow-lg px-8 fixed z-10">
+        <div className="navbar bg-base-100 shadow-lg px-2 md:px-8 fixed z-10">
             <div className="flex-1">
                 <Link to="/" className="btn btn-ghost gap-0 text-secondary normal-case text-2xl">Byte<span className="text-primary">Blaze</span></Link>
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1">
-                    <NavLink className={({ isActive }) => isActive ? "font-extrabold text-primary mr-4" : "font-bold mr-4"} to="/">Home</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? "font-extrabold text-primary mr-4" : "font-bold mr-4"} to="/blogs">Blogs</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? "font-extrabold text-primary mr-4" : "font-bold mr-4"} to="/bookmarks">Book Marks</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "font-extrabold text-primary m-1 md:mr-4 text-xs md:text-sm lg:text-xl" : "font-bold m-1 md:mr-4 text-xs md:text-sm lg:text-xl"} to="/">Home</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "font-extrabold text-primary m-1 md:mr-4 text-xs md:text-sm lg:text-xl" : "font-bold m-1 md:mr-4 text-xs md:text-sm lg:text-xl"} to="/blogs">Blogs</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "font-extrabold text-primary m-1 md:mr-4 text-xs md:text-sm lg:text-xl" : "font-bold m-1 md:mr-4 text-xs md:text-sm lg:text-xl"} to="/bookmarks">Book Marks</NavLink>
 
                 </ul>
                 <label className="cursor-pointer grid place-items-center">

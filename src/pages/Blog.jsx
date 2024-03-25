@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { MdBookmarkAdd } from "react-icons/md";
+import { saveBlog } from "../Utils";
+
 
 const Blog = () => {
     const [tabIndx, setTabIndx] = useState(0);
     const blog = useLoaderData();
-    const { title, comments_count, reading_time_minutes, public_reactions_count, published_at, tags } = blog;
-    console.log(blog);
+    const { title, comments_count, reading_time_minutes, public_reactions_count, published_at } = blog;
+    
+    const handleBookMarks = blog =>{
+        saveBlog(blog);
+    }
+
     return (
         <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
             <article className="space-y-8">
@@ -32,10 +39,13 @@ const Blog = () => {
                         </svg>
                         <span>author</span>
                     </Link>
+                    <div onClick={()=>handleBookMarks(blog)} className="bg-primary p-3 ml-4 rounded-full hover:bg-opacity-30 bg-opacity-20 cursor-pointer hover:scale-105 overflow-hidden">
+                        <MdBookmarkAdd className="text-2xl text-secondary" />
+                    </div>
                 </div>
                 <Outlet></Outlet>
             </article>
-            
+
         </div>
     );
 };
